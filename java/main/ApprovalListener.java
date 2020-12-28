@@ -104,7 +104,7 @@ public class ApprovalListener extends ListenerAdapter
 							.setColor(Server.EMBED_COL_INT)
 							.addField("From: ", e.getGuild().getMemberById(quote.getId()).getUser().getAsTag(), true)
 							.addField("Rejected by: ", e.getUser().getAsTag(), true)
-							.setImage(quote.getQuote())
+							.setDescription(quote.getQuote())
 							.setTimestamp(Instant.now());
 					
 					e.getGuild().getTextChannelById(Server.LOG_CHANNEL_ID).sendMessage(log.build()).queue();
