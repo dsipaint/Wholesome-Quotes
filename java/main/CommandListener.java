@@ -58,6 +58,12 @@ public class CommandListener extends ListenerAdapter
 				
 				wholesomequotetext = formatExternalEmotes(wholesomequotetext.trim(), e.getMessage().getEmotes()); //format the text safely
 				
+				if(wholesomequotetext.length() > MessageEmbed.TEXT_MAX_LENGTH)
+				{
+					e.getChannel().sendMessage("Your message is too big for our bot! Sorry :/").queue();
+					return;
+				}
+				
 				Quote newquotesubmission = new Quote(userID, wholesomequotetext);
 				
 				
